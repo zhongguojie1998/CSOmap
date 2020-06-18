@@ -1,0 +1,7 @@
+p-value	endocrine	endothelial	exocrine	immune_cell	schwann	stellate	
+endocrine	0.4759	0.4759	0.4759	0.4759	0.4759	0.4759	
+endothelial	0.4759	0.0000	0.0000	0.4759	0.0006	0.0000	
+exocrine	0.4759	0.0000	0.0000	0.0000	0.0000	0.0000	
+immune_cell	0.4759	0.4759	0.0000	0.0000	0.4107	0.4759	
+schwann	0.4759	0.0006	0.0000	0.4107	0.0000	0.0000	
+stellate	0.4759	0.0000	0.0000	0.4759	0.0000	0.0002	

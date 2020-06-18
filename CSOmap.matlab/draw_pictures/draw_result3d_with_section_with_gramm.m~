@@ -1,0 +1,53 @@
+function ignored = draw_result3d_with_section_with_gramm(a, filename, legendorder, view, xlim, ylim, zlim,option) %#ok<STOUT>
+% draw 3d coordinates, you can specify xlim, ylim, zlim and view to draw
+% sections, you can either draw a 'normal' plot (color repersents cluster)
+% or 'density' plot(color represents density)
+% if you are using the 'normal' option and want to change the order of clusters, please specify legendorder (default is alphabet order). 
+close all;
+if isempty(legendorder)
+    legendorder=1:size(a.standards,1);
+else
+    [~, legendorder] = ismember(legendorder, a.standards);
+end
+density = zeros(size(a.cells));
+for i = 1 : size(a.cells, 1)
+    for j = 1 : size(a.standards, 1)
+        density(i) = density(i) + size(a.neighbor{i, j}, 1);
+    end
+end
+x=a.result3d(:,1);
+y=a.result3d(:,2);
+z=a.result3d(:,3);
+c=a.standards(a.labels);
+[~,order] = sort(a.labels, 'ascend');
+c = c(order);
+x = x(order);
+y = y(order);
+z = z(order);
+% plot normal result3d
+if strcmp(option, 'normal')
+    g(1,1)=gramm('x', x, 'y', y, 'z', z, 'color', c);
+    g(1,1).set_names('color', 'cluster');
+    g(1,1).set_order_options('color', a.standards(legendorder));
+elseif strcmp(option, 'density')
+    g(1,1)=gramm('x', a.result3d(:,1), 'y', a.result3d(:,2), 'z', a.result3d(:,3), 'color', log2(density+1));
+    g(1,1).set_names('color', 'density');
+    g(1,1).set_continuous_color('colormap', 'autumn', 'Clim', [min(log2(density+1)), floor(max(log2(density+1)))+1]);
+end
+g(1,1).axe_property('Ygrid','off', 'Xgrid', 'off', 'Zgrid', 'off', 'view', view, 'xlim', xlim, 'ylim', ylim, 'zlim', zlim);
+g(1,1).geom_point();
+g(1,1).axe_property('visible', 'on');
+g(1,1).axe_property('TickDir', 'out');
+if zlim(1)~=-inf
+    g(1,1).set_title(['z = ', num2str(mean(zlim))]); 
+else
+    g(1,1).set_title('3d global'); 
+end
+f = figure();
+set(f,'units','normalized','position',[0 0 0.5 0.65]);
+g(1,1).set_point_options('base_size', 3);
+g(1,1).set_text_options('base_size', 20); 
+g.draw();
+g.export('file_name', [filename, '.pdf'], 'file_type', 'pdf');
+end
+

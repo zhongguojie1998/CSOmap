@@ -1,0 +1,7 @@
+clusterA/clusterB	endocrine	endothelial	exocrine	immune_cell	schwann	stellate	
+endocrine	1553	407	349	27	1	94	
+endothelial	46	64	70	11	35	
+exocrine	128	127	295	56	3	164	
+immune_cell	4	6	11	4	7	
+schwann	1	1	1	
+stellate	80	88	108	60	1	102	

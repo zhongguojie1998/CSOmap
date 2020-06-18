@@ -1,0 +1,12 @@
+endothelial---endothelial
+exocrine---endothelial
+exocrine---exocrine
+immune_cell---exocrine
+immune_cell---immune_cell
+schwann---endothelial
+schwann---exocrine
+schwann---schwann
+stellate---endothelial
+stellate---exocrine
+stellate---schwann
+stellate---stellate
