@@ -15,6 +15,8 @@ You don't have to install anything, but you need to run the code under folder CS
 
 We have provided a demo dataset, to run it:
 
+0. unzip the data/demo/TPM.txt.gz file
+
 1. change your matlab current working directory to CSOmap.matlab
 
 2. type a single line of code:
