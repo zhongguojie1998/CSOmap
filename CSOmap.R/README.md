@@ -5,19 +5,27 @@ This is a R package.
 
 We have tested this package on these platforms:
 
-Mac Os: R 3.6.0.
+Mac OS 10.15.5: R 3.6.0
 
-You don't have to install anything, but you need to run the code under folder CSOmap.R/
+We recommend install plotly and ggplot2 for visualization, please install it via
+
+    install.packages(c('plotly', 'ggplot2'))
+
+You need to run the code under folder CSOmap.R/
 
 ======== Demo ========
 
 We have provided a demo dataset, to run it:
 
-(1). change your R current working directory to CSOmap_R/ (on Code Ocean, the name is code/)
+(0). unzip this gz file data/demo/TPM.txt.gz
+
+(1). change your R current working directory to CSOmap_R/ (on Code Ocean, the name is code/) and source the raw code:
+
+    source('CSOmap.R')
 
 (2). type a single line of code:
 
-    runme('demo');
+    CSOmap('demo')
 
 It will take about 5 minutes to run.
 
@@ -40,7 +48,7 @@ To run this package, you should read and follow the instructions as below:
 
 All the data should be saved in a single folder under 'data/' (All the tables mentioned below should be tab-seperated): 
 
- For TPM data, the first column should be gene names (ATTENTION! NOT GENE ID!); The first row should be cell names, starting with a leading tab (\t). The contants of this table should be the TPM (ATTENTION! NOT log(TPM+1)!) value. The file name should be TPM.txt
+ For TPM data, the first column should be gene names (ATTENTION! NOT GENE ID!); The first row should be cell names, starting with a leading tab (\t). The contants of this table should be TPM (ATTENTION! NOT log(TPM+1)!) value. The file name should be TPM.txt
 
  For label data, the first columns should be cell names (we use that to match the cell names in TPM.txt, order is not necessary) and the second column should be the corresponding label. The file name should be label.txt.
 

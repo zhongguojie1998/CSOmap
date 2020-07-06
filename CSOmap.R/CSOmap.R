@@ -38,8 +38,6 @@ CSOmap <- function(DataSetName) {
   coordsPath <- paste0("./results/", DataSetName, "/coordinates.txt")
   row.names(coords) <- cellnames
   colnames(coords) <- c('x', 'y', 'z')
-  # plot 3d
-  plot3d <- plot_ly(x=coords[,1], y=coords[,2], z=coords[,3], type="scatter3d", mode="markers", color=labels)
   # write coords
   write.table(coords, coordsPath, quote = FALSE, sep = "\t")
   # do statistical tests
@@ -83,8 +81,6 @@ CSOmap <- function(DataSetName) {
   q_value <- matrix(p.adjust(p_value), nrow = length(standards), ncol = length(standards))
   colnames(q_value) <- standards
   rownames(q_value) <- standards
-  p_value_heatmap <- heatmap(p_value, scale = "none", Colv = NA, Rowv = NA)
-  q_value_heatmap <- heatmap(q_value, scale = "none", Colv = NA, Rowv = NA)
   # write p and q value
   pvaluePath <- paste0("./results/", DataSetName, "/pvalue.txt")
   qvaluePath <- paste0("./results/", DataSetName, "/qvalue.txt")
@@ -95,9 +91,10 @@ CSOmap <- function(DataSetName) {
   result$counts = counts
   result$pvalue = p_value
   result$qvalue = q_value
-  plot3d
-  p_value_heatmap
-  q_value_heatmap
+  # # plot 3d and heatmap
+  # plot_ly(x=coords[,1], y=coords[,2], z=coords[,3], type="scatter3d", mode="markers", color=labels)
+  # heatmap(p_value, scale = "none", Colv = NA, Rowv = NA)
+  # heatmap(q_value, scale = "none", Colv = NA, Rowv = NA)
   result
 }
 
