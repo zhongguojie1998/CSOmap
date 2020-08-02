@@ -649,7 +649,7 @@ classdef analyst
             end
         end
         
-        %% functions about statistical results and reverse statis(p-value matrix)
+        %% functions about statistical results and reverse statis(q-value matrix)
         function f = statisticsshow(obj, fontsize, filename)
             % show the q-value matrix as a picture
             if ~exist('fontsize', 'var')
@@ -733,7 +733,7 @@ classdef analyst
         function ignored = writestatistics(obj, filename) %#ok<STOUT>
             %write q-value matrix into txt file
             file = fopen([obj.outputpath, filename, '.txt'], 'w');
-            fprintf(file, '%s\t', 'p-value');
+            fprintf(file, '%s\t', 'q-value');
             for i = 1 : size(obj.standards, 1)
                 fprintf(file, '%s\t', obj.standards{i});
             end
@@ -1030,7 +1030,7 @@ classdef analyst
                     end
                     fprintf(file, '\n');
                     else
-                        fprintf(file, '%s\t%s\n\n', [obj.standards{i}, '---', obj.standards{j}], ['p-value: ', num2str(obj.connection(i, j))]);
+                        fprintf(file, '%s\t%s\n\n', [obj.standards{i}, '---', obj.standards{j}], ['q-value: ', num2str(obj.connection(i, j))]);
                     end
                 end
             end
