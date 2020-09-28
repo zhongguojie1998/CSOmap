@@ -130,7 +130,7 @@ To run on demo set, use code runme('demo');
 
 This code will preprocess the data, reconstruct 3d, do statistical analysis and draw pictures with default configurations, if you are not satisfied with default configurations, you can refer to the annotations in runme.m for details.
 
-Those pictures only contains basic information for this dataset, including 3d plot, density plot, etc. If you want to study a certain gene or compare this dataset with another, like we did in our paper, you can refer to functions in draw_pictures/ for details, or you can see draw_all_pictures.m for examples. We also used Microsoft Excel and Powerpoint to draw some of the pictures based on extracted information stored in analyst. 
+Those pictures only contains basic information for this dataset, including 3d plot, density plot, etc. If you want to study a certain gene or compare this dataset with another, like we did in our paper, you can refer to functions in draw_pictures/ for details, or you can see draw_all_pictures.m for examples. We also used Microsoft Excel and Powerpoint to draw some of the pictures based on extracted information stored in the matlab object "analyst.mat". 
 
 ======== Outputs ========
 
