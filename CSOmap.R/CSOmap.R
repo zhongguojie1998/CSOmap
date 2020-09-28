@@ -29,6 +29,7 @@ CSOmap <- function(DataSetName) {
   # discret affinityMat
   for (i in 1:dim(affinityMat)) {
     affinityArray <- affinityMat[i,]
+    affinityArray[i] = 0
     affinityArraySorted <- sort(affinityArray, decreasing = TRUE)
     affinityArray[affinityArray <= affinityArraySorted[50]] = 0
     affinityMat[i,] = affinityArray
@@ -70,7 +71,7 @@ CSOmap <- function(DataSetName) {
   for (i in 1:dim(counts)[1]) {
     for (j in 1:dim(counts)[2]) {
       if (i == j) {
-        M <- as.numeric(cellCounts[i]) * (as.numeric(cellCounts[i])-1)
+        M <- as.numeric(cellCounts[i]) * (as.numeric(cellCounts[i])-1) / 2
       } else {
         M <- as.numeric(cellCounts[i]) * (as.numeric(cellCounts[j]))
       }

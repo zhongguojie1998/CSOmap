@@ -1,2 +1,0 @@
-ligand-receptor pair number: 2486
-ligand-receptor found in data set: 2417
