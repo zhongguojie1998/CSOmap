@@ -1,0 +1,9 @@
+number	B-cell	CAF	Endothelial	Macrophage	NK	T-cell	malignant	normal	
+B-cell	103	59	46	29	8	319	11	64	
+CAF	59	33	12	48	12	200	113	31	
+Endothelial	46	12	17	39	5	80	22	22	
+Macrophage	29	48	39	59	23	152	141	42	
+NK	8	12	5	23	5	173	10	21	
+T-cell	319	200	80	152	173	1608	107	346	
+malignant	11	113	22	141	10	107	1071	103	
+normal	64	31	22	42	21	346	103	36	

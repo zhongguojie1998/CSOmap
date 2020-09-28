@@ -1,0 +1,9 @@
+clusterA/clusterB	B-cell	CAF	Endothelial	Macrophage	NK	T-cell	malignant	normal	
+B-cell	37	14	27	10	8	24	6	29	
+CAF	12	14	11	11	12	14	9	15	
+Endothelial	11	3	12	11	3	10	7	9	
+Macrophage	17	14	16	27	11	19	26	21	
+NK	2	2	4	7	6	13	5	9	
+T-cell	58	60	55	50	118	254	66	139	
+malignant	9	45	14	67	7	28	169	69	
+normal	14	9	13	16	13	27	14	32	
