@@ -66,7 +66,7 @@ CSOmap <- function(DataSetName) {
   write.table(counts, countsPath, quote = TRUE, sep = "\t")
   # calculate stats
   countsN <- (sum(counts) + sum(diag(counts)))/2
-  p_value <- counts
+  p_value <- copy(counts)
   K = countsN
   for (i in 1:dim(counts)[1]) {
     for (j in 1:dim(counts)[2]) {
