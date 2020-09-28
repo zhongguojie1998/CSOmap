@@ -1,0 +1,4 @@
+./CSOmap.R/results/*
+./CSOmap.matlab/output/*
+./CSOmap.R/data/TPM.txt
+./CSOmap.matlab/data/TPM.txt
