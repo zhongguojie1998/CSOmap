@@ -20,8 +20,8 @@ CSOmap <- function(DataSetName) {
   labelIx <- match(labels, standards)
   cellCounts <- table(labelIx)
   # find ligands and receptors TPM
-  ligandsIndex <- match(LR$V1, genenames)
-  receptorIndex <- match(LR$V2, genenames)
+  ligandsIndex <- match(c(LR$V1, LR$V2), genenames)
+  receptorIndex <- match(c(LR$V2, LR$V1), genenames)
   ligandsTPM <- as.matrix(TPM[ligandsIndex[!is.na(ligandsIndex)&!is.na(receptorIndex)],])
   receptorTPM <- as.matrix(TPM[receptorIndex[!is.na(ligandsIndex)&!is.na(receptorIndex)],])
   LRscores <- LR$V3[!is.na(ligandsIndex)&!is.na(receptorIndex)]
