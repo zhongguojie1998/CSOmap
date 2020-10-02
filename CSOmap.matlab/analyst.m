@@ -996,7 +996,13 @@ classdef analyst
             end
             for i = 1 : size(obj.counts, 1)
                 for j = 1 : i
-                    count = obj.counts{i, j};
+                    if i==j
+                        cis_count = obj.counts{i, j};
+                        trans_count = [cis_count(:,2),cis_count(:,1)]; %% because I storage counts in i==j column only once, needs duplicate
+                        count = [cis_count;trans_count];
+                    else
+                        count = obj.counts{i, j};
+                    end
                     allconclusion = cell(0, 2);
                     if size(count, 1)
                         fprintf(file, '%s\t%s\n\n', [obj.standards{i}, '---', obj.standards{j}], ['q-value: ', num2str(obj.connection(i, j))]);
