@@ -1,0 +1,8 @@
+endocrine---endocrine
+endothelial---endocrine
+endothelial---endothelial
+immune_cell---immune_cell
+stellate---endothelial
+stellate---exocrine
+stellate---immune_cell
+stellate---stellate

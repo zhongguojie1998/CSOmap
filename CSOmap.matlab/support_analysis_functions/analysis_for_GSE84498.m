@@ -1,6 +1,9 @@
-load('data/analysts/GSE84498.mat')
+%load('output/GSE84498/analyst.mat');
+load('data/analysts/GSE84498.mat');
 affinitymat=a.calculate_affinity_mat;
-Pmat = importdata('data/GSE84498.probability.txt');
+load('data/analysts/Pmats_GSE84498_GSE108561.mat');
+Pmat = PmatGSE84498;
+%Pmat = importdata('data/GSE84498.probability.txt');
 k=0;
 labels=1:9;
 av_labels=Pmat*labels';

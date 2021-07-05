@@ -1,0 +1,7 @@
+number	endocrine	endothelial	exocrine	immune_cell	schwann	stellate	
+endocrine	268	94	72	132	0	8	
+endothelial	94	377	1085	34	12	125	
+exocrine	72	1085	3738	197	182	568	
+immune_cell	132	34	197	60	1	15	
+schwann	0	12	182	1	2	13	
+stellate	8	125	568	15	13	24	

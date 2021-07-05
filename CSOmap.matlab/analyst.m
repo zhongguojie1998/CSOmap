@@ -347,6 +347,34 @@ classdef analyst
             end
         end
         
+        function ignored = writeTPM(obj, filename) %#ok<STOUT>
+            %write affinitymat into txt file
+            file = fopen([filename, '.txt'], 'w');
+            fprintf(file, '%s\t', 'Gene');
+            for i = 1 : size(obj.cells, 1)
+                fprintf(file, '%s\t', obj.cells{i});
+            end
+            fprintf(file, '\n');
+            for i = 1 : size(obj.TPM, 1)
+                fprintf(file, '%s\t', obj.genes{i});
+                for j = 1 : size(obj.TPM, 2)
+                    fprintf(file, '%.4f\t', obj.TPM(i, j));
+                end
+                fprintf(file, '\n');
+            end
+        end
+        
+        function ignored = writelabels(obj, filename) %#ok<STOUT>
+            %write affinitymat into txt file
+            file = fopen([filename, '.txt'], 'w');
+            fprintf(file, '%s\t', 'Cell');
+            fprintf(file, '%s\n', 'Label');
+            for i = 1 : size(obj.labels, 1)
+                fprintf(file, '%s\t', obj.cells{i});
+                fprintf(file, '%s\n', obj.standards{obj.labels(i)});
+            end
+        end
+        
         %% functions about result 3d coordinate
         function ignored = writeresult3d(obj, filename) %#ok<STOUT>
             %write coordinates into txt file
