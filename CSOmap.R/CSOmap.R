@@ -24,7 +24,8 @@ CSOmap <- function(DataSetName) {
   receptorIndex <- match(c(LR$V2, LR$V1), genenames)
   ligandsTPM <- as.matrix(TPM[ligandsIndex[!is.na(ligandsIndex)&!is.na(receptorIndex)],])
   receptorTPM <- as.matrix(TPM[receptorIndex[!is.na(ligandsIndex)&!is.na(receptorIndex)],])
-  LRscores <- LR$V3[!is.na(ligandsIndex)&!is.na(receptorIndex)]
+  LRscores <- c(LR$V3, LR$V3)
+  LRscores <- LRscores[!is.na(ligandsIndex)&!is.na(receptorIndex)]
   affinityMat <- t(ligandsTPM) %*% diag(LRscores) %*% receptorTPM
   # discret affinityMat
   for (i in 1:dim(affinityMat)) {
