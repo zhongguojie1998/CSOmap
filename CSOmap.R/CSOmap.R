@@ -1,5 +1,6 @@
 CSOmap <- function(DataSetName) {
   library(plotly)
+  library(data.table)
   # load data
   TPMpath <- paste0("./data/", DataSetName, "/TPM.txt")
   LRpath <- paste0("./data/", DataSetName, "/LR_pairs.txt")
